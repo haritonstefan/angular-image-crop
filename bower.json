@@ -1,6 +1,6 @@
 {
-  "name": "angular-image-crop",
-  "version": "2.0.0",
+  "name": "angular-image-crop-opt",
+  "version": "2.0.2",
   "homepage": "http://andyshora.com/angular-image-cropper.html",
   "authors": [
     "Andy Shora <andyshora@gmail.com>",
@@ -11,7 +11,11 @@
     "image-crop.js",
     "image-crop-styles.css"
   ],
-  "ignore": [],
+  "ignore": [
+    "README.md",
+    "index.html",
+    "index2.html"
+  ],
   "keywords": [
     "angular",
     "angularjs",
