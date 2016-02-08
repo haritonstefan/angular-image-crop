@@ -807,7 +807,7 @@
           var targetX = 0, targetY = 0;
           var zoom = 1;
           var maxZoomGestureLength = 0;
-          var maxZoomedInLevel = 0, maxZoomedOutLevel = 2;
+          var maxZoomedInLevel = -1, maxZoomedOutLevel = 3;
           var minXPos = 0, maxXPos = (padding / 2), minYPos = 0, maxYPos = (padding / 2); // for dragging bounds
           var maxSize = scope.maxSize ? Number(scope.maxSize) : null; //max size of the image in px
 
@@ -1014,11 +1014,6 @@
             minTop = (scope.height + padding) - this.height;
             newWidth = imgWidth;
             newHeight = imgHeight;
-            if (imgWidth >= imgHeight) {
-              maxZoomedInLevel = ($canvas.height - padding) / imgHeight;
-            } else {
-              maxZoomedInLevel = ($canvas.width - padding) / imgWidth;
-            }
 
             maxZoomGestureLength = to2Dp(Math.sqrt(Math.pow($canvas.width, 2) + Math.pow($canvas.height, 2)));
 
@@ -1301,6 +1296,7 @@
             var diffY = startY - ((e.type === 'touchmove') ? e.changedTouches[0].clientY : e.clientY); // how far mouse has moved in current drag
             /*targetX = currentX - diffX; // desired new X position
              targetY = currentY - diffY; // desired new X position*/
+
 
             moveImage(currentX - diffX, currentY - diffY);
 
